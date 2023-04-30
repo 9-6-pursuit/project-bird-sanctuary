@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import BirdCard from './Components/BirdCard';
-import Cart from './Components/Cart';
-import Checkout from './Components/Checkout';
-import birdData from './data/birds';
+import React, { useState } from "react";
+import BirdCard from "./Components/BirdCard";
+import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
+import birdData from "./data/birds";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -32,11 +32,7 @@ function App() {
       <h1>Adopt a Bird</h1>
       <div className="bird-container">
         {birdData.map((bird) => (
-          <BirdCard
-            key={bird.id}
-            bird={bird}
-            handleAddToCart={addToCart}
-          />
+          <BirdCard key={bird.id + '-card'} bird={bird} addToCart={addToCart} />
         ))}
       </div>
       <Cart
@@ -50,10 +46,10 @@ function App() {
         cartItems={cartItems}
         calculateTotalCost={calculateTotalCost}
         applyDiscount={applyDiscount}
-        resetCart={resetCart}
+        setCartItems={setCartItems}
       />
     </div>
   );
-}
+   }
 
 export default App;

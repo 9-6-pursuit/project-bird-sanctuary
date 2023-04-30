@@ -84,9 +84,17 @@ export default function Checkout(props) {
         </div>
         <button type="submit">Submit</button>
       </form>
-      <p>Total cost: ${totalCost}</p>
+      <h3>Items in Cart:</h3>
+      <ul>
+        {cartItems.map((item) => (
+          <li key={item.id}>
+            {item.name} - ${item.amount.toFixed(2)}
+          </li>
+        ))}
+      </ul>
+      <p>Total cost: ${totalCost.toFixed(2)}</p>
       {discountedCost !== totalCost && (
-        <p>Discounted cost: ${discountedCost}</p>
+        <p>Discounted cost: ${discountedCost.toFixed(2)}</p>
       )}
     </div>
   );
