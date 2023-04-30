@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.gallery {
+    display: flex;
+}
+
+.gallery img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+}
