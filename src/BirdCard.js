@@ -12,3 +12,4 @@ function BirdCard({ bird, onAdopt }) {
 }
 
 export default BirdCard;
+

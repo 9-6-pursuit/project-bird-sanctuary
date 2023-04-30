@@ -80,22 +80,27 @@ describe("It can total the birds in the cart", () => {
       cy.get("h4").contains("$100");
     });
   });
-  it("Can get the total for multiple birds in the cart", () => {
-    addManyBirdsToCart();
-    // need to wait because not all birds added to cart otherwise
-    cy.wait(1000);
-    cy.get(".Cart").within(() => {
-      cy.get("h4")
-        .invoke("text")
-        .then((text) => {
-          text = Number(text.match(/[0-9]+/g));
-          console.log(text);
-          return text;
-        })
-        .should("be.gte", 1980);
-    });
-  });
-});
+
+
+
+                                                                                  it("Can get the total for multiple birds in the cart", () => {
+                                                                                    addManyBirdsToCart();
+                                                                                    // need to wait because not all birds added to cart otherwise
+                                                                                    cy.wait(1000);
+                                                                                    cy.get(".Cart").within(() => {
+                                                                                      cy.get("h4")
+                                                                                        .invoke("text")
+                                                                                        .then((text) => {
+                                                                                          const total = parseFloat(text.replace(/[^0-9.]/g, ""));
+                                                                                          console.log(total);
+                                                                                          return total;
+                                                                                        })
+                                                                                        .should("be.gte", 1980);
+                                                                                    });
+                                                                                  });
+
+                                                                                  });
+
 
 describe("Applies 10% discount when 3 or more birds are added", () => {
   before(() => {
@@ -176,7 +181,9 @@ describe("Checkout and reset", () => {
   it("I can complete the inputs in the checkout form", () => {
     completeForm();
     const values = Object.values(formData);
-    cy.get("input[type=submit]").each((input) => {
+
+                                                                                      cy.get("button[type=submit]").each((input) => {
+
       const value = cy.wrap(input).invoke("val");
       values.includes(value);
     });
@@ -184,13 +191,16 @@ describe("Checkout and reset", () => {
     cy.wait(500);
   });
 
+
+
   let stub;
   it("An alert tells me the purchase was successful and the cart is emptied", () => {
     stub = cy.stub();
     cy.on("window:alert", stub)
       .then(() => {
         cy.get(".Checkout").within(() => {
-          cy.get('input[type="submit"]')
+                                                                                               cy.get('button[type="submit"]')
+
             .click()
             .then(() => {
               expect(stub.getCall(0)).to.be.calledWith(

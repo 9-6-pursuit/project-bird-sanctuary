@@ -16,7 +16,26 @@ function Checkout({ onCheckout }) {
         <p>Thank you for adopting birds!</p>
       ) : (
         <form onSubmit={handleSubmit}>
-          {/* Add your form inputs here */}
+          <label>
+            First Name:
+            <input type="text" name="firstName" />
+          </label>
+          <label>
+            Last Name:
+            <input type="text" name="lastName" />
+          </label>
+          <label>
+            Email:
+            <input type="email" name="email" />
+          </label>
+          <label>
+            Credit Card:
+            <input type="text" name="creditCard" />
+          </label>
+          <label>
+            Zip Code:
+            <input type="text" name="zipCode" />
+          </label>
           <button type="submit">Submit</button>
         </form>
       )}
@@ -25,3 +44,4 @@ function Checkout({ onCheckout }) {
 }
 
 export default Checkout;
+
