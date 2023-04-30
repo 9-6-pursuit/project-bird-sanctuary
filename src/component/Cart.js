@@ -4,7 +4,7 @@ function Cart() {
   return (
   <>
   <div className="cart">
-    <h4>cart</h4>
+    <h4>Cart</h4>
 
   </div>
   </>

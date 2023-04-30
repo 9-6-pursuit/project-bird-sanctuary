@@ -1,13 +1,12 @@
 body {
-    margin: 0 auto;
-    width: 90%;
+    width: 95%;
     text-align: center;
-    align-items: center;
     height: 100vh;
+    margin: 0 auto;
+
 }
 main {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     margin: 10px;
 
@@ -18,22 +17,59 @@ main div {
     flex-wrap: wrap;
 }
 
+/*styling the cart and checkout section*/
+
 .cart-checkout {
-    display: flex;
-    justify-content: space-between;
-    top: 0;
     width: 25%;
-    margin-bottom: 2px;
-    margin: 0;
-    padding: 0;
+    padding: 10px;
+    margin: auto;
+    margin-top: 0px;
 }
 
+.cart {
+    border: 2px solid green;
+    width: 250px;
+    height: 300px;
+    
+}
 
+.checkout {
+    border: 2px solid green;
+    width: 250px;
+    height: 300px;
+    margin-top: 10px;
+    
+}
+
+.cart h4, .checkout h4 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* styling the bird cards section */
 
 .birds {
+    display: flex;
+    flex-wrap: wrap;
     width: 70%;
+    margin-top: 10px;
 }
 
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(108, 11, 21, 0.8);
+    transition: 0.3s;
+    height: 275px;
+    width: 220px;
+    background-color: rgb(178, 252, 244);
+    padding: 10px;
+    margin: 0px 35px 20px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .card img{
     width: 130px;
@@ -46,12 +82,11 @@ main div {
 }
 .card p {
     width: 100%;
-    align-items: center;
     text-align: center;
     padding-bottom: 0%;
     margin-bottom: 0px;
-
 }
+
 
 .card .name{
     font-weight: bolder;
@@ -60,35 +95,4 @@ main div {
 .card button{
     margin: auto;
     width: 85%;
-
 }
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(108, 11, 21, 0.8);
-    transition: 0.3s;
-    height: 300px;
-    width: 200px;
-    background-color: rgb(178, 252, 244);
-    /* padding: 10px; */
-    margin: 10px;
-    
-    display: flex;
-    flex-wrap: wrap;
-  }
-
- .cart {
-    border: 2px solid green;
-    width: 250px;
-    height: 400px;
-    padding-bottom: 0px; 
-    padding: 0px;
-    margin: 0px;
- }
-
- .checkout {
-    border: 2px solid green;
-    width: 250px;
-    height: 400px;
-    padding: 0px;
-    margin: 0px;
- }
