@@ -1,0 +1,94 @@
+body {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+
+}
+
+main div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart-checkout {
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    width: 25%;
+    margin-bottom: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.birds {
+    width: 70%;
+}
+
+
+.card img{
+    width: 130px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+
+    
+}
+.card p {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0%;
+    margin-bottom: 0px;
+
+}
+
+.card .name{
+    font-weight: bolder;
+}
+
+.card button{
+    margin: auto;
+    width: 85%;
+
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(108, 11, 21, 0.8);
+    transition: 0.3s;
+    height: 300px;
+    width: 200px;
+    background-color: rgb(178, 252, 244);
+    /* padding: 10px; */
+    margin: 10px;
+    
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+ .cart {
+    border: 2px solid green;
+    width: 250px;
+    height: 400px;
+    padding-bottom: 0px; 
+    padding: 0px;
+    margin: 0px;
+ }
+
+ .checkout {
+    border: 2px solid green;
+    width: 250px;
+    height: 400px;
+    padding: 0px;
+    margin: 0px;
+ }

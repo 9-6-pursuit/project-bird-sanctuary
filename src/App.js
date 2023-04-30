@@ -12,7 +12,13 @@ function App () {
 
   return (
     <>
-    <div>
+    <main>
+    <div className="cart-checkout">
+      <Cart />
+      <Checkout />
+    </div>
+
+    <div className="birds">
       {birds.map((bird) => {
         return (
         <BirdCard 
@@ -22,9 +28,7 @@ function App () {
         )
       })}
     </div>
-      
-      <Cart />
-      <Checkout />
+    </main>
     </>
   );
 };

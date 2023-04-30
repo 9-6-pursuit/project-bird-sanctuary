@@ -3,7 +3,9 @@ import React from "react";
 function Checkout() {
   return(
     <>
-    <h1>checkout</h1>
+    <div className="checkout">
+    <h4>checkout</h4>
+    </div>
     </>
   );
 }

@@ -3,9 +3,12 @@ import React from "react";
 function BirdCard({bird}) {
     return (
       <>
-        <h1>{bird.name}</h1>
-        <img src={bird.img} alt={bird.name} />
-        <p>Price: ${bird.amount}</p>
+        <ul className="card">
+            <p class="name">{bird.name}</p>
+            <p>Price: ${bird.amount}</p>
+            <img src={bird.img} alt={bird.name} />
+            <button>Adopt</button>
+        </ul>
       </>
     );
   }
