@@ -30,7 +30,13 @@ main div {
     border: 2px solid green;
     width: 250px;
     height: auto;
+    display: flex;
+    flex-direction: row;
     
+}
+
+li {
+    list-style: none;
 }
 
 .checkout {
