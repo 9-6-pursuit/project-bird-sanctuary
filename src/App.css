@@ -29,23 +29,21 @@ main div {
 .cart {
     border: 2px solid green;
     width: 250px;
-    height: 300px;
+    height: auto;
     
 }
 
 .checkout {
     border: 2px solid green;
     width: 250px;
-    height: 300px;
+    height: auto;
     margin-top: 10px;
-    
+
 }
 
 .cart h4, .checkout h4 {
     width: 100%;
     text-align: center;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
 }
 
 /* styling the bird cards section */
