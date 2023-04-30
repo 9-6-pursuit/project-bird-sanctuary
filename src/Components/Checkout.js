@@ -4,11 +4,9 @@ export default function Checkout(props) {
   const { cartItems, calculateTotalCost, applyDiscount, setCartItems } = props;
 
   const [formState, setFormState] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    address: '',
-    city: '',
-    state: '',
     zip: '',
   });
 
@@ -17,11 +15,9 @@ export default function Checkout(props) {
 
     // validate form inputs
     if (
-      formState.name === '' ||
+      formState.firstName === '' ||
+      formState.lastName === '' ||
       formState.email === '' ||
-      formState.address === '' ||
-      formState.city === '' ||
-      formState.state === '' ||
       formState.zip === ''
     ) {
       alert('Please fill out all fields.');
@@ -43,13 +39,24 @@ export default function Checkout(props) {
       <h2>Checkout</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
-            id="name"
-            value={formState.name}
+            id="firstName"
+            value={formState.firstName}
             onChange={(event) =>
-              setFormState({ ...formState, name: event.target.value })
+              setFormState({ ...formState, firstName: event.target.value })
+            }
+          />
+        </div>
+        <div>
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            value={formState.lastName}
+            onChange={(event) =>
+              setFormState({ ...formState, lastName: event.target.value })
             }
           />
         </div>
@@ -65,40 +72,7 @@ export default function Checkout(props) {
           />
         </div>
         <div>
-          <label htmlFor="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            value={formState.address}
-            onChange={(event) =>
-              setFormState({ ...formState, address: event.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label htmlFor="city">City:</label>
-          <input
-            type="text"
-            id="city"
-            value={formState.city}
-            onChange={(event) =>
-              setFormState({ ...formState, city: event.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label htmlFor="state">State:</label>
-          <input
-            type="text"
-            id="state"
-            value={formState.state}
-            onChange={(event) =>
-              setFormState({ ...formState, state: event.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label htmlFor="zip">Zip:</label>
+          <label htmlFor="zip">Zipcode:</label>
           <input
             type="text"
             id="zip"

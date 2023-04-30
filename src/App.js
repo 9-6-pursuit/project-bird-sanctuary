@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <h1>Adopt a Bird</h1>
       <div className="bird-container">
         {birdData.map((bird) => (
           <BirdCard
