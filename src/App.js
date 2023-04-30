@@ -1,12 +1,3 @@
-// function App () {
-//   return (
-//     <div>
-//       <h1>Hello, world!</h1>
-//     </div>
-//   );
-// };
-
-// export default App;
 
 
 import React, { useState, useMemo } from 'react';
@@ -23,17 +14,35 @@ function App() {
     setCartItems([...cartItems, bird]);
   };
 
+  const handleDelete = (bird) => {
+    let removed = false;
+    const newItems = cartItems.filter((item) => {
+      if (!removed && item.id === bird.id) {
+        removed = true;
+        return false;
+      }
+      return true;
+    });
+    setCartItems(newItems);
+  };
+  
+
   const handleCheckout = () => {
     setCartItems([]);
   };
 
   const total = useMemo(() => {
-    return cartItems.reduce((acc, bird) => acc + bird.amount, 0);
+    const cartTotal = cartItems.reduce((acc, bird) => acc + bird.amount, 0);
+    console.log('cartTotal:', cartTotal);
+    return cartTotal;
   }, [cartItems]);
-
+  
   const discount = useMemo(() => {
-    return cartItems.length >= 3 ? 0.1 : 0;
+    const cartDiscount = cartItems.length >= 3 ? 0.1 : 0;
+    console.log('cartDiscount:', cartDiscount);
+    return cartDiscount;
   }, [cartItems]);
+  
 
   const applicableBonusItems = useMemo(() => {
     const totalAfterDiscount = total * (1 - discount);
@@ -60,16 +69,26 @@ function App() {
           <BirdCard key={bird.id} bird={bird} onAdopt={handleAdopt} />
         ))}
       </div>
-      <Cart
-        cartItems={cartItems}
-        total={total}
-        discount={discount}
-        bonusItems={applicableBonusItems}
-      />
+
+
+
+<Cart
+  cartItems={cartItems}
+  total={total * (1 - discount)} // Pass the total after discount applied
+  discount={discount}
+  bonusItems={applicableBonusItems}
+  onDelete={handleDelete}
+/>
+
+
+
+
       <Checkout onCheckout={handleCheckout} />
     </div>
   );
 }
 
 export default App;
+
+
 

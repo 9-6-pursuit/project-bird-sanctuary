@@ -1,19 +1,26 @@
+function Cart({ cartItems, total, discount, bonusItems, onDelete }) {
 
-import React from 'react';
+  const handleDelete = (bird) => {
+    onDelete(bird);
+  };
 
-function Cart({ cartItems, total, discount, bonusItems }) {
+  const displayTotal = total.toFixed(2);
+
   return (
     <div className="Cart">
       <h2>Cart</h2>
       <ol>
         {cartItems.map((item, index) => (
           <li key={index}>
-            {item.name} - ${item.amount.toFixed(2)}
+            {item.name} - ${item.amount.toFixed(2)}{' '}
+            <button onClick={() => handleDelete(item)}>Delete</button>
           </li>
         ))}
       </ol>
-      <h4>Total: ${(total * (1 - discount)).toFixed(2)}</h4>
-      <h4>Discount: {discount * 100}%</h4> {/* Add this line */}
+      <h4>
+        Total: <span id="cart-total">${displayTotal}</span>
+      </h4>
+      <h4>Discount: {discount * 100}%</h4>
       <ul>
         {bonusItems.map((item, index) => (
           <li key={index}>{item}</li>
@@ -24,4 +31,3 @@ function Cart({ cartItems, total, discount, bonusItems }) {
 }
 
 export default Cart;
-

@@ -6,8 +6,10 @@ function Checkout({ onCheckout }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormCompleted(true);
+    alert('You have adopted birds. Thank you!'); // Update the alert text to match the test expectation
     onCheckout();
   };
+
 
   return (
     <div className="Checkout">
@@ -36,7 +38,8 @@ function Checkout({ onCheckout }) {
             Zip Code:
             <input type="text" name="zipCode" />
           </label>
-          <button type="submit">Submit</button>
+          <input type="submit" value="Submit" />
+
         </form>
       )}
     </div>
