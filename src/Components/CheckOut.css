@@ -1,0 +1,26 @@
+
+.checkout-section {
+    margin: 2rem 0;
+  }
+  .checkout-wrapper {
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black;
+  }
+  h4 {
+    text-align: center;
+  }
+  .Checkout {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  input.error {
+    border: 1px solid red;
+    outline: none !important;
+  }
+  
+  input.success{
+    border: 1px solid green;
+    outline: none !important;
+  }

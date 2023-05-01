@@ -1,0 +1,10 @@
+.Cart {
+    margin: 0 auto;
+    grid-column: 1;
+    text-align: center;
+  }
+  .cart-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 2px solid black;
+  }
