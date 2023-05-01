@@ -1,0 +1,59 @@
+.bird-section {
+    margin: 4rem auto;
+    padding: 2rem 0rem;
+  }
+  
+  .grid {
+    max-height: 75vh;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 3rem 4rem;
+    grid-auto-flow: row;
+    flex-wrap: wrap;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: center;
+  }
+  .card {
+    font-size: 1rem;
+    display: block;
+    background-color: rgb(199, 253, 253);
+    width: 240px;
+    height: 260px;
+    /* margin: 2rem 0rem; */
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  img {
+    margin-top: -10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5%;
+  }
+  .price {
+    font-weight: 900;
+  }
+  .name {
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+  .btn {
+    text-align: center;
+    border: 1px solid black;
+  }
+  .grid ul {
+    list-style-type: none;
+  }
+  
+  @media (max-width: 830px) {
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(9, 1fr);
+      display: block;
+    }
+  }
