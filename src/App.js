@@ -29,6 +29,7 @@ function App () {
     <div className="cart-checkout">
       <Cart 
       itemInCart = {itemInCart}
+      setItemInCart = {setItemInCart}
       total = {total}
       discount = {discount}
       bonusItems = {bonusItems}

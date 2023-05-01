@@ -2,8 +2,14 @@ import React from "react";
 // import { useEffect } from "react";
 // import bonusItems from "./data/bonusItems";
 
-function Cart({itemInCart, total, discount, bonusItems}) {
+function Cart({itemInCart, setItemInCart, total, discount, bonusItems}) {
     const bonuses = [];
+
+    function handleRemoveItem (index) {
+        const newCart = itemInCart.filter((item, i) => i !== index)
+
+        setItemInCart(newCart)
+    }
 
     if (total >= 100 && total <= 300) {
       bonuses.push(bonusItems[0]);
@@ -28,6 +34,8 @@ function Cart({itemInCart, total, discount, bonusItems}) {
         return(
             <li key={index}>
                 {item.name} ${item.amount}
+                <button className="remove-button" 
+                onClick={() => handleRemoveItem(index)}>Remove</button>
             </li>
         )
     })}
