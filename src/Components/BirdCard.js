@@ -5,13 +5,13 @@ export default function BirdCard(props) {
 
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
-  useEffect(() => {
-    if (props.cartItems && props.cartItems.some) {
-      const isInCart = props.cartItems.some((item) => item.id === bird.id);
-      setIsAddedToCart(isInCart);
-    }
-  }, [props.cartItems, bird.id]);
-  
+useEffect(() => {
+  if (props.cartItems && props.cartItems.some) {
+    const isInCart = props.cartItems.some((item) => item.id === bird.id);
+    setIsAddedToCart(isInCart);
+  }
+}, [props.cartItems, bird.id]);
+
 
   const handleAddToCart = () => {
     props.addToCart(bird);
