@@ -1,0 +1,26 @@
+body{
+    display: flex;
+}
+.card{
+    display: flex;
+    height: auto;
+    width: 250px;
+    border-style: none;
+
+}
+.birdBox{
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: auto;
+}
+
+img.icon{
+    max-height: 10rem;
+    max-width: auto;
+}
+
+ul.birdBox{
+    list-style: none;
+}
