@@ -1,9 +1,17 @@
 import React from "react";
+// import useState from "react"
 
-function BirdCard({bird}) {
+function BirdCard({bird, itemInCart, setItemInCart, }) {
 
+    const handleAddToCart = () => {
+        const birdData ={
+            name: bird.name,
+            amount: bird.amount
+        }
+        setItemInCart(itemInCart => [...itemInCart, birdData])
 
-    
+    }
+
     
     return (
         <>
@@ -11,7 +19,7 @@ function BirdCard({bird}) {
                 <p class="name">{bird.name}</p>
                 <p>Price: ${bird.amount}</p>
                 <img src={bird.img} alt={bird.name} />
-                <button >Adopt</button>
+                <button onClick = {handleAddToCart}>Adopt</button>
             </ul>
         </>
     );

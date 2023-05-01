@@ -27,29 +27,29 @@ main div {
 }
 
 .cart {
-    border: 2px solid green;
+    border: 1px solid green;
     width: 250px;
     height: auto;
-    display: flex;
-    flex-direction: row;
+    display: block;
     
 }
 
-li {
+/* li {
     list-style: none;
-}
+} */
 
 .checkout {
-    border: 2px solid green;
+    border: 1px solid green;
     width: 250px;
     height: auto;
     margin-top: 10px;
 
 }
 
-.cart h4, .checkout h4 {
+.cart h4, .checkout h4, .cart p {
     width: 100%;
     text-align: center;
+    font-weight: bold;
 }
 
 /* styling the bird cards section */

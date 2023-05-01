@@ -1,23 +1,38 @@
 import React from "react";
-// import { useState } from "react";
+import { useState, useEffect } from "react";
 import birdData from "./data/birds";
-// import bonusItems from "./data/bonusItems"
+import bonusItems from "./data/bonusItems"
 import BirdCard from "./component/BirdCard";
 import Cart from "./component/Cart";
 import Checkout from "./component/Checkout";
 
 function App () {
-  // const [birds, setBirds] = useState(birdData)
-  // const [cart, setCart] = useState([])
+  const [itemInCart, setItemInCart] = useState([])
+  const [total, setTotal] = useState(0)
+  const [discount, setDiscount] = useState(false)
 
-  // console.log(cart)
-
+  useEffect(() => {
+    let totalPrice = 0;
+    for (let i = 0; i < itemInCart.length; i++) {
+      totalPrice += itemInCart[i].amount;
+    }
+    if (itemInCart.length >= 3) {
+      totalPrice = totalPrice * .9
+      setDiscount(true)
+    } 
+    setTotal(totalPrice);
+  }, [itemInCart]);
 
   return (
     <>
     <main>
     <div className="cart-checkout">
-      <Cart />
+      <Cart 
+      itemInCart = {itemInCart}
+      total = {total}
+      discount = {discount}
+      bonusItems = {bonusItems}
+      />
       <Checkout />
     </div>
 
@@ -27,6 +42,8 @@ function App () {
         <BirdCard 
         key={bird.id}
         bird = {bird}
+        itemInCart = {itemInCart}
+        setItemInCart= {setItemInCart}
         />
         )
       })}
