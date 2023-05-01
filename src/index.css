@@ -10,7 +10,7 @@ main {
   /* background-color: lavender; */
 }
 
-.birds-list {
+.card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -20,7 +20,7 @@ main {
   padding: 0;
 }
 
-.birds-list li {
+.card li {
   width: 30%;
   min-height: 360px;
   align-items: center;
@@ -35,8 +35,80 @@ main {
   background-color: rgb(191, 223, 221);
 }
 
-.birds-list img {
+.card img {
   width: 100%;
   max-height: 200px;
   margin: auto;
+}
+
+/* button {
+  background: #fcdebe;
+  } */
+.card {
+  margin-left: 220px;
+}
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cart-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cart-container {
+  text-align: center;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.Checkout {
+  margin-top: 20px;
+  margin-left: -75px;
+  padding: 10px;
+  border: 2px solid black;
+  width: 280px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.Checkout label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.Checkout input[type="text"],
+.checkout input[type="number"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Checkout button {
+  background-color: #fcdebe;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.Checkout button:hover {
+  background-color: #ffbf80;
 }
