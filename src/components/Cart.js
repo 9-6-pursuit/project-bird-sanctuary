@@ -3,9 +3,12 @@ import Bonus from "./Bonus";
 
 export default function Cart({cartItems, setCartItems}){
     let total = 0;
-     cartItems.map((bird) =>{
-        total += bird.amount;
-    }, 0)
+    if (cartItems.length !== 0){
+        cartItems.map((bird) =>{
+           return total += bird.amount;
+       }, 0)
+
+    }
 
     function removeBird(item){
         cartItems.splice(cartItems.indexOf(item),1)
@@ -37,11 +40,10 @@ export default function Cart({cartItems, setCartItems}){
     return (
         <aside className="Cart">
             <h3>Cart items</h3>
-            <h4>Discount: {discount}%</h4>
+            <h5>Discount: {discount}%</h5>
             <h4> Total: ${total}</h4>
-            {console.log(total)}
             <ol>{listBird}</ol>
-            <span>Your donations has qualified you for the following items:</span>
+            <div>Your donations has qualified you for the following items:</div>
             <ul>
                  <Bonus total={total} />
             </ul>
