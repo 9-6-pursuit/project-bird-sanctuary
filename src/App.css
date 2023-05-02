@@ -1,0 +1,106 @@
+body {
+    width: 95%;
+    text-align: center;
+    height: 100vh;
+    margin: 0 auto;
+
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+
+}
+
+main div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*styling the cart and checkout section*/
+
+.cart-checkout {
+    width: 25%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.cart {
+    border: 1px solid green;
+    width: 250px;
+    height: auto;
+    display: block;
+    
+}
+
+.remove-button {
+    margin-left: 10px;
+}
+
+/* li {
+    list-style: none;
+} */
+
+.checkout {
+    border: 1px solid green;
+    width: 250px;
+    height: auto;
+    margin-top: 10px;
+
+}
+
+.cart h4, .checkout h4, .cart p {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* styling the bird cards section */
+
+.birds {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin-top: 10px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(108, 11, 21, 0.8);
+    transition: 0.3s;
+    height: 275px;
+    width: 220px;
+    background-color: rgb(178, 252, 244);
+    padding: 10px;
+    margin: 0px 35px 20px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card img{
+    width: 130px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+
+    
+}
+.card p {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0%;
+    margin-bottom: 0px;
+}
+
+
+.card .name{
+    font-weight: bolder;
+}
+
+.card button{
+    margin: auto;
+    width: 85%;
+}
