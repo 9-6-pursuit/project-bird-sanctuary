@@ -1,0 +1,45 @@
+.site {
+    background-color: #58bbbb;
+    border:  1px solid black;
+    border-radius: 5px;
+    display:grid;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 300px;
+    }
+
+
+.pic {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    min-height:200px ;
+    object-fit: cover;
+}
+
+.card {
+
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    margin: 40px 20px;
+    overflow: hidden;
+}
+
+.button { 
+    color: black;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+.button:hover {
+    background-color: black;
+}
