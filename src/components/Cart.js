@@ -28,7 +28,7 @@ function Cart({ selectedBirds, totalPrice, discount, handleRemoveFromCart }) {
         <ol>
           {selectedBirds.map((bird) => (
             <li key={bird.id}>
-              {bird.name}: ${bird.amount} x {bird.quantity}
+              {bird.name}: ${bird.amount / bird.quantity} x {bird.quantity}
               <button
                 className="birds"
                 onClick={() => handleRemoveFromCart(bird.id)}
