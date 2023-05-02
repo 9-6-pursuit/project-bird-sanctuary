@@ -25,33 +25,41 @@ function App () {
 
   return (
     <>
-    <main>
-    <div className="cart-checkout">
-      <Cart 
-      itemInCart = {itemInCart}
-      setItemInCart = {setItemInCart}
-      total = {total}
-      discount = {discount}
-      bonusItems = {bonusItems}
-      />
-      <Checkout />
-    </div>
-
-    <div className="birds">
-      {birdData.map((bird) => {
-        return (
-        <BirdCard 
-        key={bird.id}
-        bird = {bird}
+    <main className="main-container">
+    <h1>Bird Sanctuary</h1>
+    <hr/>
+    <div className="column-card">
+      <div className="left-column">
+        
+        <Cart
         itemInCart = {itemInCart}
-        setItemInCart= {setItemInCart}
+        setItemInCart = {setItemInCart}
+        total = {total}
+        discount = {discount}
+        bonusItems = {bonusItems}
         />
-        )
-      })}
+        <Checkout />
+        
+      </div>
+
+      <div className="cards">
+        {birdData.map((bird) => {
+          return (
+          <BirdCard 
+          key={bird.id}
+          bird = {bird}
+          itemInCart = {itemInCart}
+          setItemInCart= {setItemInCart}
+          />
+          )
+        })}
+      </div>
     </div>
     </main>
     </>
   );
 };
+
+
 
 export default App;

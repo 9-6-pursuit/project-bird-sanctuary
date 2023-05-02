@@ -22,7 +22,7 @@ function Checkout() {
         />
         <label>Email</label>
         <input
-        type="text"
+        type="email"
         id="email"
         />
         <label>Zip Code</label>
