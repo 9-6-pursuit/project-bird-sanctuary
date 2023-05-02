@@ -6,3 +6,5 @@ const bonusItems = [
 ];
 
 export default bonusItems;
+
+
