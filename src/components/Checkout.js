@@ -1,7 +1,11 @@
 import React from "react";
 
-function Checkout() {
+function Checkout({selectedBirds}) {
   function handelSubmit() {
+    if (selectedBirds.length === 0) {
+      alert("You haven't adopted any birds.")
+      return;
+    }
     alert("You have adopted birds. Thank you!");
   }
   return (
