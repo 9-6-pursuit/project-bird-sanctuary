@@ -10,6 +10,7 @@ export default function Cart({
   const totalCost = calculateTotalCost();
   const discount = cartItems.length >= 3 ? 0.1 : 0;
   const discountedCost = applyDiscount(totalCost, discount);
+  const discountedPrice = discount > 0 ? totalCost - (totalCost * discount) : totalCost;
 
   let bonusCount = 0;
   let bonusIndex = 0;
@@ -42,6 +43,9 @@ export default function Cart({
       <h4>
         Total: ${discountedCost.toFixed(2)} ({discount * 100}% discount applied)
       </h4>
+      {discount > 0 && (
+        <h4>Discounted Price: ${discountedPrice.toFixed(2)}</h4>
+      )}
       {bonusItems.length > 0 && (
         <div>
           <h4>Bonus Items:</h4>
