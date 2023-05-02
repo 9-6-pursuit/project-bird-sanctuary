@@ -1,8 +1,11 @@
 * {
     box-sizing: border-box;
+    color: maroon;
 }
 
-
+#key {
+    font-size: 0px;
+}
 .gallery {
     display: flex;
 }
@@ -12,4 +15,20 @@
     width: 100%;
     max-width: 350px;
     height: 300px;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+}
+
+
+header {
+    color: silver;
+}
+footer {
+    font-size: small;
+    color: silver;
 }
