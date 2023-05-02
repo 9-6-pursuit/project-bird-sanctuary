@@ -55,13 +55,13 @@ function App() {
 
   const handleRemoveFromCart = (id) => {
     const selectedBird = selectedBirds.find((bird) => bird.id === id);
-
+  
     if (selectedBird) {
       const updatedSelectedBirds = selectedBirds
         .map((bird) => {
           if (bird.id === id) {
             if (bird.quantity > 1) {
-              return { ...bird, quantity: bird.quantity - 1 };
+              return { ...bird, quantity: bird.quantity - 1, amount: bird.amount - (bird.amount / bird.quantity) };
             } else {
               return null;
             }
@@ -69,10 +69,12 @@ function App() {
           return bird;
         })
         .filter(Boolean);
-
+  
       setSelectedBirds(updatedSelectedBirds);
     }
   };
+  
+  
 
   return (
     <div>
