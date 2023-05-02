@@ -28,6 +28,7 @@ function App() {
     if (birdInCartIndex !== -1 && selectedBirds[birdInCartIndex].quantity > 0) {
       const updatedSelectedBirds = [...selectedBirds];
       updatedSelectedBirds[birdInCartIndex].quantity += 1;
+      
       updatedSelectedBirds[birdInCartIndex].amount =
         selectedBird.amount * updatedSelectedBirds[birdInCartIndex].quantity;
       setSelectedBirds(updatedSelectedBirds);
@@ -74,8 +75,6 @@ function App() {
     }
   };
   
-  
-
   return (
     <div>
       <main>
