@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  width: 85%;
+  margin: auto;
+  padding: 2em;
+  /* background-color: lavender; */
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.card li {
+  width: 30%;
+  min-height: 360px;
+  align-items: center;
+  margin: 1em;
+  box-shadow: 2px 2px 4px black;
+  border-radius: 10px;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(191, 223, 221);
+}
+
+.card img {
+  width: 100%;
+  max-height: 200px;
+  margin: auto;
+}
+
+/* button {
+  background: #fcdebe;
+  } */
+.card {
+  margin-left: 220px;
+}
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cart-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cart-container {
+  text-align: center;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.Checkout {
+  margin-top: 20px;
+  margin-left: -75px;
+  padding: 10px;
+  border: 2px solid black;
+  width: 280px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.Checkout label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.Checkout input[type="text"],
+.checkout input[type="number"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Checkout button {
+  background-color: #fcdebe;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.Checkout button:hover {
+  background-color: #ffbf80;
+}
