@@ -9,30 +9,32 @@ function Checkout() {
     <>
     <div className="checkout">
     <h4>Checkout</h4>
-    <form>
+    <form onSubmit={handelOnSubmit}>
         <label>First Name</label>
         <input
         type="text"
         id="first-name"
+        required
         />
         <label>Last Name</label>
         <input
         type="text"
         id="last-name"
+        required
         />
         <label>Email</label>
         <input
         type="email"
         id="email"
+        required
         />
         <label>Zip Code</label>
         <input
         type="number"
-        id="email"
+        id="zip"
+        required
         />
-
-        <button onClick = {handelOnSubmit}>Submit</button>
-
+        <input type="submit"></input>
     </form>
     </div>
     </>

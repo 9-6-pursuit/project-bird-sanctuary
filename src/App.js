@@ -43,16 +43,14 @@ function App () {
       </div>
 
       <div className="cards">
-        {birdData.map((bird) => {
-          return (
+        {birdData.map((bird) => (
           <BirdCard 
           key={bird.id}
           bird = {bird}
           itemInCart = {itemInCart}
           setItemInCart= {setItemInCart}
           />
-          )
-        })}
+        ))}
       </div>
     </div>
     </main>
