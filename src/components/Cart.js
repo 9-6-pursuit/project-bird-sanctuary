@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bonusItems from "../data/bonusItems";
 
-function Cart({ selectedBirds, totalPrice, discount }) {
+function Cart({ selectedBirds, totalPrice, discount, handleRemoveFromCart }) {
   const [bonuses, setBonuses] = useState([]);
 
   useEffect(() => {
@@ -28,13 +28,23 @@ function Cart({ selectedBirds, totalPrice, discount }) {
         <ol>
           {selectedBirds.map((bird) => (
             <li key={bird.id}>
-              {bird.name}: ${bird.amount}
+              {bird.name}: ${bird.amount} x {bird.quantity}
+              <button
+                className="birds"
+                onClick={() => handleRemoveFromCart(bird.id)}
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ol>
         {bonuses.length > 0 && (
           <>
-            <p><strong>Your donations have qualified you for the following items:</strong></p>
+            <p>
+              <strong>
+                Your donations have qualified you for the following items:
+              </strong>
+            </p>
             <ul>
               {bonuses.map((bonus) => (
                 <li key={bonus}>{bonus}</li>
