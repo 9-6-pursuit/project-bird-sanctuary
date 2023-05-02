@@ -40,28 +40,36 @@ function App() {
   );
 
   return (
-    <div>
-      <h1>Adopt a Bird</h1>
-      <div className="bird-container">
-        {birdData.map((bird) => (
-          <BirdCard key={bird.id + "-card"} bird={bird} addToCart={addToCart} />
-        ))}
+    <div className="container">
+      <h1 className="title">Adopt a Bird</h1>
+      <div className="content-container">
+        <div className="birds-container">
+          {birdData.map((bird) => (
+            <BirdCard key={bird.id + "-card"} bird={bird} addToCart={addToCart} />
+          ))}
+        </div>
+        <div className="cart-checkout-container">
+          <div className="cart-container">
+            <Cart
+              cartItems={cartItems}
+              removeFromCart={removeFromCart}
+              calculateTotalCost={calculateTotalCost}
+              applyDiscount={applyDiscount}
+              discountedCost={discountedCost}
+              bonusItems={bonusItems}
+              resetCart={resetCart}
+            />
+          </div>
+          <div className="checkout-container">
+            <Checkout
+              cartItems={cartItems}
+              calculateTotalCost={calculateTotalCost}
+              applyDiscount={applyDiscount}
+              setCartItems={setCartItems}
+            />
+          </div>
+        </div>
       </div>
-      <Cart
-        cartItems={cartItems}
-        removeFromCart={removeFromCart}
-        calculateTotalCost={calculateTotalCost}
-        applyDiscount={applyDiscount}
-        discountedCost={discountedCost}
-        bonusItems={bonusItems}
-        resetCart={resetCart}
-      />
-      <Checkout
-        cartItems={cartItems}
-        calculateTotalCost={calculateTotalCost}
-        applyDiscount={applyDiscount}
-        setCartItems={setCartItems}
-      />
     </div>
   );
 }
