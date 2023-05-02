@@ -1,54 +1,82 @@
 import {useState} from  "react";
-import { v1 as generateUniqueID } from "uuid";
+// import { v1 as generateUniqueID } from "uuid";
 import birdData from "./data/birds";
 import Cart from "./Components/Cart";
 import BirdBoard from "./Components/BirdBoard";
 import Checkout from "./Components/Checkout";
 import "./App.css"
+import bonusItems from "./data/bonusItems"
 
-function App () {
-  const [ birds, setBirds ] = useState([]);
-  const [ selectOption, setSelectOption ] = useState("");
-  const [ cartContent, setCartContent] = useState( [] );
+function App (props) {
+ const [ cart, setCart ] = useState([]);
+ const [ cartTotal, setCartTotal ] = useState(null);
+ const [funExtras, setFunExtras] = useState([]);
 
+
+ const [ birds, setBirds ] = useState([]);
+
+
+ function getBonusItems(total) {
+   if (total >= 100 && total < 300) {
+     setFunExtras([bonusItems[0]]);
+   } else if (total >= 300  && total < 500) {
+     setFunExtras( [bonusItems[0], bonusItems[1]]);
+   } else if (total >= 500 && total < 1000) {
+     setFunExtras( [bonusItems[0], bonusItems[1], bonusItems[2]]);
+   } else if (total >= 1000) {
+     setFunExtras( bonusItems);
+   }
+ }
+
+   function handleAdopt(bird) {
+      setCart([...cart, bird ])
+      setCartTotal(cartTotal=>cartTotal+bird.amount);
+      getBonusItems(bird.amount+cartTotal);
+      
+      console.log(cart, bird, "Adopt button clicked");
+      console.log(bird.amount, "is the amount")
+      console.log(cartTotal+bird.amount)
+      console.log (funExtras)
+      console.log("bird ", bird, " birddata is ", birdData, "id is ", bird.id, "key is " , bird.key)
   
+      }
 
-//this function will add a bird to all the birds, which we don't need. We DO need it to add birds to the cart, so should it be there? When this function is triggered, a new constant is created (addBird). addBird is an object in which most fields are populated by information in birdData from birds.js which has been imported. But instead of adding a new bird to the list, I am creating a copy of a bird to put in the cart. Is there a way to use the spread operator instead, where addBird = ...??
-  function adoptBird(){
-    const addBird = {
-      id: birdData.id,
-      newID:  generateUniqueID(),
-      name: birdData.name,
-      amount: birdData.amount,
-      image: birdData.img || "https://loremflickr.com/640/480/",
-      };
-      //console.log("addBird in function", addBird)
-      handleAdoptBird(addBird);
-    }
-    
-  //handleAdoptBird (was handleAddBird) function will detonate upon clicking of the button the bird. 
-  function handleAdoptBird(e) {
-    setBirds([birds, ...birds]);
-    //console.log("birds", birds)
-  }  
-
-//adoptBird()
+      function deleteBird(badBird) {
+        const filteredCart=cart.filter((item)=>(badBird.id !== item.id))
+        setCart(filteredCart);
+        setCartTotal(cartTotal-badBird.amount)
+      }
+        
 
   return (
     <div>
       <header>
-        <h1>Hello, world!</h1>
+        <h1>The Bird Sanctuary</h1>
       </header>
-
-      <p>Here is the cart component:  </p>
-        <Cart />
-      <p>Here is the BirdBoard component</p>
-        <BirdBoard />
-      <p> Here is the Checkout component:</p>
+        <Cart cart={cart} setCart={setCart} cartTotal={cartTotal} setCartTotal={setCartTotal} birds={birds} deleteBird={deleteBird} />
         <Checkout />
+        <BirdBoard cart={cart} setCart={setCart}  cartTotal={cartTotal} setCartTotal={setCartTotal} handleAdopt={handleAdopt} />
+
       <footer className="footer">after these messages, we'll be right back</footer>
     </div>
   );
 };
 
 export default App;
+
+
+// Didn't Use:
+
+    
+    // const [ discount, setDiscount ] = useState(false);
+    // const [ buyingBirds, setBuyingBirds ] = useState([]);
+
+    // const wantedBirds = [...buyingBirds];
+    // //const birdIndex = wantedBirds.findIndex(bird)( birdID === birdData.id);
+    // //const bird = {...wantedBirds[birdIndex]};
+
+    // let sum = 0
+    // // Taking my discount from the last time I did this to see if this will help
+
+    // let discount = props.cart.length >2 ? 10: 0;
+    // console.log("props.discount: ", props.discount)

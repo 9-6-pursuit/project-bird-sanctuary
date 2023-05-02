@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { v1 as generateUniqueID } from "uuid";
 
 
-function Checkout() {
+function Checkout(props) {
 
 
   const [checkoutForm, setCheckoutForm ] = useState({
@@ -16,74 +16,81 @@ function Checkout() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    //addEvent();
     resetCheckoutForm();
   }
 
   function resetCheckoutForm() {
-    //setNewForm
+    setCheckoutForm ({ 
+      id: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      zipCode: "",
+    });
   }
 
   function handleTextChange(e) {
-
+    setCheckoutForm({
+      ...checkoutForm,
+      [e.target.id]: e.target.value,
+    });
   }
+
+
   return (
     <div className='checkout'>
-      <form onSubmit={handleSubmit}>
+      <form className= "checkout" onSubmit={handleSubmit}>
         <h3>Checkout Here!</h3>
         <label htmlFor="first-name">First name:</label>
         <input
           type="text"
           id="first-name"
           onChange={handleTextChange}
-          value="">
-        </input>
+           />
+   
        
         <label htmlFor="last-name">Last name:</label>
         <input
           type="text"
           id="last-name"
           onChange={handleTextChange}
-          value="">
-        </input>        
+          / >
+    
         
         <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
           onChange={handleTextChange}
-          value=""
           />
 
         <label htmlFor="zip">Zip code:</label>
         <input
           type="number"
           id="zipcode"
-
           onChange={handleTextChange}
-          value=""
           />
 
         <input
         type="hidden"
         id="id"
-        value={generateUniqueID}
+        value={generateUniqueID()}
         />
+
+
+        <input
+        className='button'
+        type="submit"
+        content="Submit"
+        onClick={() => {
+          alert("You have adopted one or more birds. Thank you!");
+          }} 
+        />
+
+        <p className="success-alert" id="success-alert"></p>
       </form>
     </div>
   )
 }
 
 export default Checkout
-
-
-
-/*
-
-    id: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    zipCode: "",
-
-    */
