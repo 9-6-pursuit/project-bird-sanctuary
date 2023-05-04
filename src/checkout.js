@@ -1,4 +1,9 @@
-export default function BirdForm( {handleSubmit} ) {
+export default function Checkout(  ) {
+
+   function handleSubmit() {
+    alert("You have adopted birds. Thaml you!")
+   }
+
     return (
         <form onSubmit={handleSubmit}>
             <h3>Checkout</h3>
@@ -24,14 +29,14 @@ export default function BirdForm( {handleSubmit} ) {
             name="email" 
             required/>
 
-            <label htmlFor="firstName">Zip-Code</label>
+            <label htmlFor="firstName">Zip Code</label>
             <input 
             type="number" 
-            id="zipcode" 
-            name="zipcode" 
+            id="zipCode" 
+            name="zipCode" 
             required/>
             <br />
-            <input type="submit"/>
+            <input type="submit" value="Submit"/>
 
         </form>
     )

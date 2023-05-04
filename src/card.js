@@ -1,18 +1,24 @@
-export default function Card( {bird,handleCart} ) {
+import React from "react"
+
+export default function Cards( {birdData ,handleCart} ) {
 
 
     return (
-        <div class="card">
-            <span>{bird.name}</span>  
-            <li key={bird.id} className="card">
-                <img src={bird.img} alt={bird.name} />
-                <h5>
-                    {bird.name} {bird.amount}
-                </h5>
-
-            
-            <button onClick={() => handleCart(bird)}>Adopt</button>
-            </li>
+        <div class="birds">
+            {birdData.map((bird) => {
+                return (
+                    <div>
+                        <h4>{bird.name}</h4>
+                        <p>{bird.amount}</p>
+                        <img className="bird-image" src={bird.img} alt={ `${bird.name}` }></img>
+                        <button className="adopt" onClick={() => {
+                            handleCart(bird)
+                        }}>
+                            Adopt
+                        </button>
+                    </div>
+                )
+            })}
         </div>
     )
 }
