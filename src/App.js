@@ -3,6 +3,7 @@ import Checkout from "./components/Checkout";
 import { useState } from "react";
 import Cart from "./components/Cart"
 import Birdcard from "./components/Birdcard";
+import "./App.css"
 function App () {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
