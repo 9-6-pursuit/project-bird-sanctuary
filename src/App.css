@@ -1,0 +1,105 @@
+.Checkout .submit{
+    background-color: white;
+    font-weight: bolder;
+    text-align: center;
+   }
+  
+   .Checkout .submit:hover {
+    background-color: aliceblue;
+    border-color: rgb(182, 67, 124);
+    transform: scale(1);
+    text-align: center;
+  }
+  
+   
+  .Cart .Bonus{
+    display: flex; 
+    flex-wrap: wrap;
+  }
+  .Checkout button {
+    background-color: white;
+    font-weight: bolder;
+    
+  }
+  .birds img {
+      width: 180px;
+      height: 180px;
+   grid-column: flex;
+  }
+  
+  .birds {
+      
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      width: 200px;
+      height: 400px;
+      margin-bottom: 50px;
+      background-color: rgb(62, 94, 183);
+  
+  
+  }
+  
+  .birds button {
+    background-color: aliceblue;
+  }
+  
+  .birds button:hover {
+    background-color: aliceblue;
+    border-color: blue;
+    transform: scale(1.2);
+  }
+  
+  .button {
+    background-color: aliceblue;
+  }
+  
+  .button:hover {
+    background-color: aliceblue;
+    border-color: red;
+    transform: scale(1.2)
+  }
+  
+  .App{
+    display: grid ;
+    grid-template-columns: 2fr 4fr;
+    margin-top: 50px;
+    background-color: silver;
+  }
+  .App h1{
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bolder;
+  }
+  
+  .birds h1 {
+      font-size: 30px;
+  }
+  
+  
+  .card {
+   display: flex;  
+   align-items: center; 
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   grid-column-start: 2;
+   grid-row-start: 1;
+  }
+  
+  .left{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .Cart{
+      grid-template-columns: auto;
+      border: solid 2px gray;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      width: 300px;
+      height: fit-content;
+      margin-bottom: 50px;
+      background-color: rgb(140, 195, 225);
+  }
