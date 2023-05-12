@@ -21,6 +21,36 @@ IF I am setting cart content in handleAdopt, where is the state and where/what a
 what did I mean by "Calling a ffunction inside of child that will update things inside of the parent?
 
 
+================  unused from my App.js ===============
+
+// Didn't Use:
+
+    
+    // const [ discount, setDiscount ] = useState(false);
+    // const [ buyingBirds, setBuyingBirds ] = useState([]);
+
+    // const wantedBirds = [...buyingBirds];
+    // //const birdIndex = wantedBirds.findIndex(bird)( birdID === birdData.id);
+    // //const bird = {...wantedBirds[birdIndex]};
+
+    // let sum = 0
+    // // Taking my discount from the last time I did this to see if this will help
+
+    // let discount = props.cart.length >2 ? 10: 0;
+    // console.log("props.discount: ", props.discount)
+
+          
+      console.log(cart, bird, "Adopt button clicked");
+      console.log(bird.amount, "is the amount")
+      console.log(cartTotal+bird.amount)
+      console.log (funExtras)
+      console.log("bird ", bird, " birddata is ", birdData, "id is ", bird.id, "key is " , bird.key)
+
+
+
+
+
+
 ===========  Checkout ==============
 So this has to be a form (I realize while looking at the lifting state lab).
 

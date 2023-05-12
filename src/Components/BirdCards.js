@@ -1,7 +1,7 @@
 
-import { useState } from 'react';
-import { v1 as generateUniqueID } from "uuid";
-import birdData from '../data/birds'
+// import { useState } from 'react';
+// import { v1 as generateUniqueID } from "uuid";
+// import birdData from '../data/birds'
 
 
 function BirdCards(props) {

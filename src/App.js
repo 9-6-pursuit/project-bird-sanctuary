@@ -1,6 +1,6 @@
 import {useState} from  "react";
 // import { v1 as generateUniqueID } from "uuid";
-import birdData from "./data/birds";
+// import birdData from "./data/birds";
 import Cart from "./Components/Cart";
 import BirdBoard from "./Components/BirdBoard";
 import Checkout from "./Components/Checkout";
@@ -10,10 +10,12 @@ import bonusItems from "./data/bonusItems"
 function App (props) {
  const [ cart, setCart ] = useState([]);
  const [ cartTotal, setCartTotal ] = useState(null);
+ 
+ // eslint-disable-next-line no-unused-vars
  const [funExtras, setFunExtras] = useState([]);
 
-
- const [ birds, setBirds ] = useState([]);
+ // eslint-disable-next-line no-unused-vars
+const [ birds, setBirds ] = useState([]);
 
 
  function getBonusItems(total) {
@@ -32,13 +34,7 @@ function App (props) {
       setCart([...cart, bird ])
       setCartTotal(cartTotal=>cartTotal+bird.amount);
       getBonusItems(bird.amount+cartTotal);
-      
-      console.log(cart, bird, "Adopt button clicked");
-      console.log(bird.amount, "is the amount")
-      console.log(cartTotal+bird.amount)
-      console.log (funExtras)
-      console.log("bird ", bird, " birddata is ", birdData, "id is ", bird.id, "key is " , bird.key)
-  
+
       }
 
       function deleteBird(badBird) {
@@ -62,21 +58,4 @@ function App (props) {
   );
 };
 
-export default App;
-
-
-// Didn't Use:
-
-    
-    // const [ discount, setDiscount ] = useState(false);
-    // const [ buyingBirds, setBuyingBirds ] = useState([]);
-
-    // const wantedBirds = [...buyingBirds];
-    // //const birdIndex = wantedBirds.findIndex(bird)( birdID === birdData.id);
-    // //const bird = {...wantedBirds[birdIndex]};
-
-    // let sum = 0
-    // // Taking my discount from the last time I did this to see if this will help
-
-    // let discount = props.cart.length >2 ? 10: 0;
-    // console.log("props.discount: ", props.discount)
+export default App;   
