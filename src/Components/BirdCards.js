@@ -1,5 +1,4 @@
-import birdData from '../data/birds'
-import { useState } from 'react';
+import "./BirdCards.css";
 
 
 
@@ -7,45 +6,36 @@ function BirdCards(props) {
 
   const { name, amount, img, id, handleAdopt } = props;
   const priceInDollars = amount
-  const [ cart, setCart ]  = useState([]);
-  const [ cartTotal, setCartTotal ]  = useState(0);
-  const [ funExtra, setFunExtra ]    = useState([]);
-  const [ birds, setBirds ] = useState([]);
-
-  function yesAdopt(chickadees) {
-
-    setCart([
-      ...cart, chickadees 
-    ])
-
-    setCartTotal( cartTotal => chickadees.amount + cartTotal);
-
-    // getBonusItems(chickadees.amount+cartTotal);
-
-    console.log(cart, birds, "Adopt button clicked");
-    console.log(birds.amount, "is the amount")
-    console.log(cartTotal+birds.amount)
-    console.log (funExtra)
-    console.log("bird ", birds, " birddata is ", birdData, "id is ", birds.id, "key is " , birds.key)
-
-
-    }
 
 
 
   return (
-    <div className="card">
-      
-      <h4>{ name }</h4>
-      <p>price: {`$${priceInDollars}`}</p>
-      <div className='image-box'>
-        <img src={ img } alt={ `${name} profile pic` } />
-      </div>
-      <p>ID #{id}</p>
-      <button className='birds' id='adopt' onClick={ handleAdopt } >
-        ADOPT
-      </button>       
-    </div>
+    <>
+      <section className='bird-wrapper'>
+          <p></p>
+        <section className="card bird-card bird">
+          <aside>
+            <h4>{ name }</h4>
+          </aside>
+          <article>
+            <div className='image-box'>
+              <img src={ img } alt={ `${name} profile pic` } />
+            </div>
+            <p>
+              <span>ID #</span>{id}
+            </p>
+            <p>
+              <span>price: </span>{`$${priceInDollars}`}
+            </p>
+          </article>
+          <aside>
+            <button className='birds button adopt' id='adopt' onClick={()=> handleAdopt(props) } >
+              ADOPT
+            </button>   
+          </aside>    
+        </section>
+      </section>
+    </>
   )
 }
 

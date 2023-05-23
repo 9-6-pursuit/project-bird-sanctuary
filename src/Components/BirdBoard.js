@@ -38,6 +38,9 @@ export default BirdBoard
 
 /* 
 
+5/23/23
+
+I am getting rid of the UID here. I don't need it until the chosen bird goes into the cart.
           
 // {birdData.map((bird) => (
           //   <BirdCards 

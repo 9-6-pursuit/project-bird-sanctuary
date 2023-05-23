@@ -1,0 +1,41 @@
+.bird-wrapper{
+    margin: auto auto;
+    width: 70%;
+
+    
+}
+
+.bird-card {
+    border: 1px solid;
+    border-radius: 3px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    
+}
+
+.bird-card article {
+    padding: 10px 25px;
+}
+
+.bird-card aside p {
+    display: inline-block;
+  font-size: 14px;
+  margin: 10px 25px;
+  padding: 0;
+  width: auto;
+}
+
+.bird-card aside span {
+    font-weight: bold;
+  }
+
+.bird-card aside button {
+    background: none;
+    cursor: pointer;
+    margin: 10px 25px;
+    justify-content: end;
+  }
+  
+  .shows-show aside button:hover {
+    text-decoration: none;
+  }

@@ -26,9 +26,9 @@ function Cart(props) {
       {/* Display Bonus Items Earned */}
       <p> Bonus items earned: </p>
       <ul>
-      {/* {props.funExtra.map((items) => (
+      {props.funExtra.map((items) => (
          <li key={generateUniqueID()}> {items} </li> 
-         ))} */}
+         ))}
 
       </ul> 
       

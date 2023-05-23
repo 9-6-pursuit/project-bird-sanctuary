@@ -33,21 +33,22 @@ const [ birds, setBirds ] = useState([]);
    function handleAdopt(birds) {
 
       setCart([...cart, birds])
-      setCartTotal( cartTotal => birds.amount + cartTotal);
+      setCartTotal( cartTotal => cartTotal + birds.amount);
 
-      getBonusItems(birds.amount+cartTotal);
+      getBonusItems(cartTotal + birds.amount);
 
-      console.log(cart, birds, "Adopt button clicked");
-      console.log(birds.amount, "is the amount")
-      console.log(cartTotal+birds.amount)
+      console.log("Adopt button clicked");
+      console.log("bird.amount:", birds.amount)
+      console.log("new total", cartTotal+birds.amount)
       console.log (funExtra)
-      console.log("bird ", birds, " birddata is ", birdData, "id is ", birds.id, "key is " , birds.key)
+      console.log("bird ", birds, " birddata is ", birdData,  "key is " , birds.key)
 
 
       }
 
       function deleteBird(badBird) {
-        const filteredCart=cart.filter((item)=>(badBird.id !== item.id))
+        console.log(Object.keys(badBird))
+        const filteredCart=cart.filter((item)=>(badBird.uid !== item.uid))
         setCart(filteredCart);
         setCartTotal(cartTotal-badBird.amount)
       }
@@ -63,7 +64,7 @@ const [ birds, setBirds ] = useState([]);
         </section>
 
 
-        <Cart cart={cart} setCart={setCart} cartTotal={cartTotal} setCartTotal={setCartTotal} birds={birds} deleteBird={deleteBird} />
+        <Cart cart={cart} setCart={setCart} cartTotal={cartTotal} setCartTotal={setCartTotal} birds={birds} deleteBird={deleteBird} funExtra = {funExtra}/>
         <Checkout />
 
 
