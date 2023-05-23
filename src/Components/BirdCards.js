@@ -1,13 +1,36 @@
+import birdData from '../data/birds'
+import { useState } from 'react';
 
-// import { useState } from 'react';
-// import { v1 as generateUniqueID } from "uuid";
-// import birdData from '../data/birds'
 
 
 function BirdCards(props) {
 
-  const { name, amount, img, id } = props;
+  const { name, amount, img, id, handleAdopt } = props;
   const priceInDollars = amount
+  const [ cart, setCart ]  = useState([]);
+  const [ cartTotal, setCartTotal ]  = useState(0);
+  const [ funExtra, setFunExtra ]    = useState([]);
+  const [ birds, setBirds ] = useState([]);
+
+  function yesAdopt(chickadees) {
+
+    setCart([
+      ...cart, chickadees 
+    ])
+
+    setCartTotal( cartTotal => chickadees.amount + cartTotal);
+
+    // getBonusItems(chickadees.amount+cartTotal);
+
+    console.log(cart, birds, "Adopt button clicked");
+    console.log(birds.amount, "is the amount")
+    console.log(cartTotal+birds.amount)
+    console.log (funExtra)
+    console.log("bird ", birds, " birddata is ", birdData, "id is ", birds.id, "key is " , birds.key)
+
+
+    }
+
 
 
   return (
@@ -19,7 +42,7 @@ function BirdCards(props) {
         <img src={ img } alt={ `${name} profile pic` } />
       </div>
       <p>ID #{id}</p>
-      <button className='birds' id='adopt' onClick="" >
+      <button className='birds' id='adopt' onClick={ handleAdopt } >
         ADOPT
       </button>       
     </div>
@@ -36,5 +59,9 @@ export default BirdCards
 
 
 //Here is one of the confusing parts. Why do I need to spell out everything here if I am also spelling it out in BirdBoard? And how does deconstruction really work. I have to keep in mind that the deconstruction is something that is in service to and will be read by BirdBoard.js. 
+
+
+//The answer is I do not. I am not longer using this component at all. I moved everything to BirdBoard. But I still don't know how to put the information iinto the cart and amount as well.
+
 
 //I ended up not using:   const [ birds, setBirds ] = useState([]); or       {/* <p id="key" className="key">key: {key}</p> */}

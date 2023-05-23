@@ -5,8 +5,6 @@ function Cart(props) {
   let discount = props.cart.length > 2 ? 10 : 0;
   console.log("props.cart: ", props.cart);
 
-
-
     // Consider using filter to keep all the birds that DON'T have the id you are deleting. Using !==.
     // Make sure that the ids are not the same when they are added to the cart - changed keys to UUIDs
     // Make sure to add a delete button to each bird

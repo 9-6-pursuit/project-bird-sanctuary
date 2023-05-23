@@ -21,6 +21,12 @@ IF I am setting cart content in handleAdopt, where is the state and where/what a
 what did I mean by "Calling a ffunction inside of child that will update things inside of the parent?
 
 
+
+================
+May21. I worked on this over the weekend with N. Pate. She mentioned I shouldn't need the layout BirdBoard, but that has messed up everything and I am not putting it back in. 
+
+ALSO:: Should I have the UUID generating a unique ID in cart or on the card? It should be the cart, right?
+
 ================  unused from my App.js ===============
 
 // Didn't Use:
