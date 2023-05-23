@@ -1,7 +1,38 @@
-function App () {
+import React from "react";
+import birdData from "./data/birds"
+import { useState } from "react";
+import Cards from "./Components/BirdCards";
+import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
+import "./App.css";
+function App() {
+  const [cart, setCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+
+  // click bird, add to cart
+  function clickBird(bird) {
+    setTotalPrice(totalPrice + bird.amount)
+    setCart([...cart, bird])
+  };
+
+
+ // remove bird
+  function removeBird(bird, index) {
+    const foundBird = cart.find(bird2 => bird2.id === bird.id);
+    const newCartPage = [...cart]
+    newCartPage.splice(index, 1);
+    setCart(newCartPage);
+    setTotalPrice(totalPrice - foundBird.amount)
+  }
+  
+
   return (
-    <div>
-      <h1>Hello, world!</h1>
+    <div className="card">
+      <Cards clickBird={clickBird} birdData={birdData} />
+      <Cart cart={cart} totalPrice={totalPrice} removeBird={removeBird} />
+      <Checkout />
+     
     </div>
   );
 };
