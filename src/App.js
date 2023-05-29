@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css"
 import {useState} from  "react";
+import { v1 as generateUniqueID } from "uuid";
 
 import Cart from "./Components/Cart";
 import BirdBoard from "./Components/BirdBoard";
 import Checkout from "./Components/Checkout";
 import bonusItems from "./data/bonusItems"
-import birdData from "./data/birds";
+// import birdData from "./data/birds";
 
 
 function App () {
@@ -14,8 +15,9 @@ function App () {
  const [ cartTotal, setCartTotal ]  = useState(0);
  const [ funExtra, setFunExtra ]    = useState([]);
 
-// eslint-disable-next-line no-unused-vars
-const [ birds, setBirds ] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [ birds, setBirds ] = useState([]);
+
 
 
  function getBonusItems(cartTotal) {
@@ -28,27 +30,31 @@ const [ birds, setBirds ] = useState([]);
    } else if (cartTotal >= 1000) {
      setFunExtra(bonusItems);
    }
+   console.log("Birds after bonus items ",birds)
  }
 
    function handleAdopt(birds) {
 
-      setCart([...cart, birds])
-      setCartTotal( cartTotal => cartTotal + birds.amount);
+    const newBird = { ...birds, key: generateUniqueID() };
 
-      getBonusItems(cartTotal + birds.amount);
+    
+    setCart([...cart, newBird]);
+    setCartTotal( prevTotal => prevTotal + birds.amount);
 
-      console.log("Adopt button clicked");
-      console.log("bird.amount:", birds.amount)
-      console.log("new total", cartTotal+birds.amount)
-      console.log (funExtra)
-      console.log("bird ", birds, " birddata is ", birdData,  "key is " , birds.key)
+    getBonusItems(cartTotal + birds.amount);
 
-
-      }
+    console.log("Adopt button clicked");
+    console.log("bird.amount:", birds.amount)
+    console.log("cartTotal", cartTotal)
+    console.log("new total", cartTotal+birds.amount)
+    console.log (funExtra)
+    console.log("bird is ", birds, "key is " , birds.key)
+    console.log("Birds after adopt",birds)
+    }
 
       function deleteBird(badBird) {
         console.log(Object.keys(badBird))
-        const filteredCart=cart.filter((item)=>(badBird.uid !== item.uid))
+        const filteredCart=cart.filter((item)=>(item.key !== badBird.key))
         setCart(filteredCart);
         setCartTotal(cartTotal-badBird.amount)
       }
@@ -64,7 +70,7 @@ const [ birds, setBirds ] = useState([]);
         </section>
 
 
-        <Cart cart={cart} setCart={setCart} cartTotal={cartTotal} setCartTotal={setCartTotal} birds={birds} deleteBird={deleteBird} funExtra = {funExtra}/>
+        <Cart cart={cart} setCart={setCart} total={cartTotal} setCartTotal={setCartTotal} birds={birds} deleteBird={deleteBird} funExtra = {funExtra}/>
         <Checkout />
 
 

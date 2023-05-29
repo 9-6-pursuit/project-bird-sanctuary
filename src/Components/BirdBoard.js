@@ -1,11 +1,8 @@
 // import { useState } from 'react';
-import { v1 as generateUniqueID } from "uuid";
+// import { v1 as generateUniqueID } from "uuid";
+
 import BirdCards from "./BirdCards"
 import birdData from '../data/birds'
-
-// We are getting the data from birdData and maps over it to create an array of Bird cards, passing each bird's information as props. But I also added a key which equals a UUID. However, that woukd really only be needed in a list item I think, so I will get rid of it for now
-//i put it back in as uid. May22
-
 
 function BirdBoard({handleAdopt}) {
 
@@ -21,10 +18,10 @@ function BirdBoard({handleAdopt}) {
         {birdData.map((bird) => (
             <BirdCards 
               handleAdopt = { handleAdopt } 
-              uid =   { generateUniqueID }
               name =  { bird.name }
               id =    { bird.id }
               img =   { bird.img }
+              key =   { bird.id }
               amount = { bird.amount }
               bird =  {bird}
               />
@@ -38,9 +35,14 @@ export default BirdBoard
 
 /* 
 
-5/23/23
+5/29. I am still having issues getting a unique key. You cannot pass a key as a prop. I am passing bird.id as a prop here and then, in BirdCards, I added a UUID to the key. But, key still appears to be undefined and the cart total is NAN.
 
+5/23/23
 I am getting rid of the UID here. I don't need it until the chosen bird goes into the cart.
+
+// We are getting the data from birdData and maps over it to create an array of Bird cards, passing each bird's information as props. But I also added a key which equals a UUID. However, that woukd really only be needed in a list item I think, so I will get rid of it for now
+//i put it back in as uid. May22
+
           
 // {birdData.map((bird) => (
           //   <BirdCards 
@@ -74,13 +76,8 @@ I am getting rid of the UID here. I don't need it until the chosen bird goes int
           </>
         ))}
         </div>
-        
-        
-        
+      
         ======================
         got rid of the key=uuid in BirdCards. I only want that in the cart
-        
-        
-        
         
         */

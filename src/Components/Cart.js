@@ -3,21 +3,17 @@ import { v1 as generateUniqueID } from "uuid";
 function Cart(props) {
 
   let discount = props.cart.length > 2 ? 10 : 0;
-  console.log("props.cart: ", props.cart);
 
-    // Consider using filter to keep all the birds that DON'T have the id you are deleting. Using !==.
-    // Make sure that the ids are not the same when they are added to the cart - changed keys to UUIDs
-    // Make sure to add a delete button to each bird
 
 
 
   return (
     <>
-    <div className="cart">
+    <div className="Cart">
         <h3>Your Cart</h3>
         <ol>
         {props.cart.map((bird) => (
-          <li key={generateUniqueID()}>{bird.name},   ${bird.amount} - <button className="deleteButton" id="deleteButton" onClick={() => props.deleteBird(bird)}>
+          <li key={bird.key + generateUniqueID()}>{bird.name},   ${bird.amount} - <button className="deleteButton" id="deleteButton" onClick={() => props.deleteBird(bird)}>
           Delete This Bird
           </button></li>
         ))}
@@ -27,7 +23,7 @@ function Cart(props) {
       <p> Bonus items earned: </p>
       <ul>
       {props.funExtra.map((items) => (
-         <li key={generateUniqueID()}> {items} </li> 
+         <li> {items} </li> 
          ))}
 
       </ul> 
@@ -50,3 +46,29 @@ function Cart(props) {
 }
 
 export default Cart
+
+
+
+/*
+======================
+5/23/23
+getting rid of the uuid part for now
+        <ol>
+        {props.cart.map((bird) => (
+          <li key={generateUniqueID()}>{bird.name},   ${bird.amount} - <button className="deleteButton" id="deleteButton" onClick={() => props.deleteBird(bird)}>
+          Delete This Bird
+          </button></li>
+        ))}
+      </ol>
+
+
+
+
+ =========================
+
+
+    // Consider using filter to keep all the birds that DON'T have the id you are deleting. Using !==.
+    // Make sure that the ids are not the same when they are added to the cart - changed keys to UUIDs
+    // Make sure to add a delete button to each bird
+
+      */

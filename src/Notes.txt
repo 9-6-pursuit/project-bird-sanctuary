@@ -18,7 +18,7 @@ It said we didn't need to format it but I remember it was hard to look at otherw
 
 IF I am setting cart content in handleAdopt, where is the state and where/what are the props?
 
-what did I mean by "Calling a ffunction inside of child that will update things inside of the parent?
+what did I mean by "Calling a function inside of child that will update things inside of the parent?
 
 
 

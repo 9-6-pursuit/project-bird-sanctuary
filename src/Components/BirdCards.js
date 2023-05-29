@@ -4,6 +4,7 @@ import "./BirdCards.css";
 
 function BirdCards(props) {
 
+  // eslint-disable-next-line no-unused-vars
   const { name, amount, img, id, handleAdopt } = props;
   const priceInDollars = amount
 
@@ -27,6 +28,9 @@ function BirdCards(props) {
             <p>
               <span>price: </span>{`$${priceInDollars}`}
             </p>
+            <p>
+              <span>unique key: </span>{`${id}`}
+            </p>
           </article>
           <aside>
             <button className='birds button adopt' id='adopt' onClick={()=> handleAdopt(props) } >
@@ -41,7 +45,7 @@ function BirdCards(props) {
 
 export default BirdCards
 
-
+// 5/29/23. Chad says to get rid of the props in handle addopt.
 
   // When this function is triggered, a new constant is created (addBird). addBird is an object in which most fields are populated by information in birdData from birds.js which has been imported. But instead of adding a new bird to the list, I am creating a copy of a bird to put in the cart. Is there a way to use the spread operator instead, where addBird = ...??
 
