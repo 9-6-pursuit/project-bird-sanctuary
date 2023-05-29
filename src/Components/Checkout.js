@@ -38,10 +38,10 @@ function Checkout(props) {
 
 
   return (
-    <div className='checkout'>
-      <form className= "checkout" onSubmit={handleSubmit}>
+    <div className='checkout Checkout'>
+      <form className= "checkout Checkout" onSubmit={handleSubmit}>
         <h3>Checkout Here!</h3>
-        <label htmlFor="first-name">First name:</label>
+        <label htmlFor="first-name">First Name:</label>
         <input
           type="text"
           id="first-name"
@@ -49,7 +49,7 @@ function Checkout(props) {
            />
    
        
-        <label htmlFor="last-name">Last name:</label>
+        <label htmlFor="last-name">Last Name:</label>
         <input
           type="text"
           id="last-name"
@@ -64,7 +64,7 @@ function Checkout(props) {
           onChange={handleTextChange}
           />
 
-        <label htmlFor="zip">Zip code:</label>
+        <label htmlFor="zip">Zip Code:</label>
         <input
           type="number"
           id="zipcode"
@@ -83,7 +83,7 @@ function Checkout(props) {
         type="submit"
         content="Submit"
         onClick={() => {
-          alert("You have adopted one or more birds. Thank you!");
+          alert("You have adopted birds. Thank you!");
           }} 
         />
 
