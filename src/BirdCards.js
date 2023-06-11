@@ -1,26 +1,18 @@
-import { useState } from 'react'
-import birdData from "./data/birds"
+import React from 'react';
 
+function BirdCards({ bird, buyBird }) {
+  const handleAdopt = () => {
+    buyBird(bird);
+  };
 
-export default function BirdCards () {
-    const [birds, setBirds] = useState(birdData)
-
-    return (
-        <div className="App">
-
-      {
-        birds.map((bird) => {
-          return (
-            <li className='card' key = {bird.id}>
-              <img src = {bird.img} alt = {bird.name} height="200" width="300"/>
-              <span>{bird.name}</span>
-              <span> - ${bird.amount}</span>
-              <button>Adopt Me</button>
-            </li>
-          )
-        })
-      }
-    
-        </div>
-    )
+  return (
+    <div className="card">
+      <img src = {bird.img} alt = {bird.name} height="200" width="300"/>
+      <h3>{bird.name}</h3>
+      <p>Amount: ${bird.amount}</p>
+      <button onClick={handleAdopt}>Adopt</button>
+    </div>
+  );
 }
+
+export default BirdCards;
