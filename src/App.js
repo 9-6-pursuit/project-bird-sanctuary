@@ -1,5 +1,5 @@
 // import {bonusItems} from "./data/bonusItems.js";
-// import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 import { v1 as generateUniqueID } from "uuid";
 import { useState } from "react";
