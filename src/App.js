@@ -1,4 +1,4 @@
-// import {bonusItems} from "./data/bonusItems.js";
+import bonusItems from "./data/bonusItems.js";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 import { v1 as generateUniqueID } from "uuid";
@@ -17,24 +17,22 @@ function App () {
   const [discount, SetDiscount] = useState(0)
 
   function increaseAmount(test){
-    SetAmount((amount + test))
+    SetAmount(() => amount + test)
       if(adoptions.length >= 2){
         SetDiscount(10)
-        priceWithDiscount(test)
       }
   }
 
-  function priceWithDiscount() {
-    console.log(discount)
-    console.log(amount)
-  }
 
   function adopt(id) {
     birds.map(bird => {
       if(bird.id === id){
         let adoptedBird = {...bird, adoptId: generateUniqueID()}
-        SetAdoption([...adoptions, adoptedBird]) 
-        increaseAmount(adoptedBird.amount)
+        return (
+          SetAdoption([...adoptions, adoptedBird]),
+          SetAmount(() => amount + adoptedBird.amount),
+          increaseAmount(adoptedBird.amount)
+        )
       }
     })
   }
@@ -51,14 +49,24 @@ function App () {
     }
   }
 
+  function removeAll() {
+    if(adoptions.length >= 1){
+      SetAmount(0)
+      SetAdoption([])
+      window.alert("You're adoptions were sent through!")
+    } else {
+      window.alert("You need to add birds to the cart!")
+    }
+  }
+
   return (
     <div>
        <Header/>
           <main className="container">
               <div className="row">
                   <aside className="col-md-3" id="leftSideBox">
-                    <Cart adoptions={adoptions} amount={amount} discount={discount}  removeBird={removeBird}/>
-                    <Checkout/>
+                  <Cart adoptions={adoptions} amount={amount} discount={discount}  removeBird={removeBird} bonusItems={bonusItems}/>
+                  <Checkout removeAll={removeAll}/>
                   </aside>
                   <aside className="col">
                         <BirdCards birds={birds} adopt={adopt}/>
@@ -66,7 +74,6 @@ function App () {
               </div>
           </main>        
         <Footer/>
-      {/* <bonusItems/> */}
     </div>
   );
 };
