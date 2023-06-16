@@ -1,0 +1,33 @@
+.birdcard img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.bird-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+    border: 2px solid rgb(127, 68, 68);
+    padding: 10px;
+    width: 70%;
+}
+
+.birdcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+    height: 300px;
+    width: 200px;
+    border: 2px solid rgb(133, 114, 44);
+    flex-shrink: 0;
+}
+
+.birdcard h4 {
+    font-size: medium;
+}
