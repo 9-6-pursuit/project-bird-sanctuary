@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=DynaPuff&family=Kablammo&family=Open+Sans&family=Roboto:wght@300&family=Shantell+Sans:wght@300;400;500&display=swap');
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kablammo', cursive;
+}
+
+header h2 {
+    font-family: 'Shantell Sans', cursive;;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+  }
+  
+  .wrapper {
+    display: flex;
+    flex: 1;
+  }
+  
+  .right-column {
+    flex: 2;
+  }
+  
+  .left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
